@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
-//const {mongoURI} = require('./config/keys');
+const { mongoURI } = require("./config/keys");
 
 const items = require("./routes/api/items");
 
@@ -17,7 +17,7 @@ const db = require("./config/keys").mongoURI;
 //CONNECT TO MONGO
 mongoose
   .connect(
-    "mongodb://bernard:bernard123@ds213615.mlab.com:13615/mern_shopping",
+    mongoURI /*"mongodb+srv://bendb:ben123@cluster0-07qmf.mongodb.net/test?retryWrites=true"*/,
     { useNewUrlParser: true }
   )
   .then(() => console.log("MongoDb Connected..."))
